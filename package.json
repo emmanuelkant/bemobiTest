@@ -1,0 +1,20 @@
+{
+  "name": "bemobi",
+  "version": "1.0.0",
+  "description": "Teste para a empresa bemobi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emmanuel Kant",
+  "license": "ISC",
+  "dependencies": {
+    "base62": "^2.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.5.15",
+    "nodemon": "^1.19.1"
+  }
+}
