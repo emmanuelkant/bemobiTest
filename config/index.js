@@ -5,12 +5,21 @@ const app = express();
 
 // Utilitários
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 
 // Rotas
 const allRoutes = require('./routes');
 
-mongoose.connect('');
+// Conexão do banco
+const mongoClient = require('./db');
+
+
+
+mongoClient.connect(err => {
+    if (err) console.error(err);
+});
+
+// Carregando Models
+const Shortner = require('../src/ShortnerUrl/model/shortner');
 
 app.use(bodyParser.json());
 
