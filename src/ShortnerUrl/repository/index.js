@@ -2,28 +2,17 @@
 
 const Shortner = require('../model/shortner');
 
-function save(obj) {
-    let newShortner = new Shortner(obj);
+function save(newDoc) {
+    const newShortner = new Shortner(newDoc);
     return newShortner.save();
 }
 
 function getLastCreated() {
-    Shortner().find({});
+    return Shortner.countDocuments({});
 }
 
 function aliasIsUnique(alias) {
-
-
-
-    console.log(Shortner);
-    Shortner.find({ alias })
-        .then(r => {
-            console.log(r)
-        })
-        .catch(t => {
-            console.log(t)
-        })
-    console.log('Olha aqui');
+    return Shortner.findOne({ alias })
 }
 
 module.exports = {

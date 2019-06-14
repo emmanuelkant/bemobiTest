@@ -1,10 +1,11 @@
 'use strict'
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://bemobi:bemobi@cluster0-ke1jk.gcp.mongodb.net/bemobi?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-    if (err) console.erro(err);
-});
+const DB_STR = {
+    BASE_PATH: 'mongodb+srv://',
+    USER: 'bemobi',
+    PASSWORD: 'bemobi',
+    CLUSTER: 'cluster0-ke1jk.gcp.mongodb.net',
+    COLLECTION: 'bemobi',
+}
 
-module.exports = client;
+module.exports = DB_STR;

@@ -3,46 +3,46 @@
 const base62 = require('base62/lib/ascii');
 const shortnerRepository = require('../repository');
 
-
-const shortner = (req, res) => {
-    console.log('entrei');
-    let output = {
+const shortner = async (req, res) => {
+    let startedTime = new Date().getTime();
+    let toSave = {
         alias: req.body.alias,
-        originalURL: req.body.url,
-        identifier: 1
+        originalURL: req.body.originalURL,
+        identifier: null
     };
-    shortnerRepository.save(output)
-        .then(r => {
-            res.send(r);
-        })
-        .catch(y => {
-            res.send(y);
-        })
+    try {
+        
+        toSave.identifier = await shortnerRepository.getLastCreated() + 1;
+        
+        if (!toSave.alias) 
+            toSave.alias = base62.encode(toSave.identifier);    
+        
+        const aliasExists = await shortnerRepository.aliasIsUnique(toSave.alias);
+        
+        if(req.body.alias && aliasExists) {
+            const errorExists = {
+                alias: toSave.alias,
+                err_code: '001',
+                description: 'CUSTOM ALIAS ALREADY EXISTS'
+            };
+            res.status(400).send(errorExists);
+            return;
+        };
+        
+        await shortnerRepository.save(toSave)
+        
+    } catch (erro) {
+        res.status(400).send(erro);
+    }
 
-    //output.identifier = shortnerRepository.getLastCreated() + 1;
-    // output.identifier = 1;
-    
-    // if (!output.alias) 
-    //     output.alias = base62.encode(output.identifier);    
-    
-    // if(!shortnerRepository.aliasIsUnique(output.alias)) {
-    //     const erroExists = {
-    //         alias: output.alias,
-    //         err_code: '001',
-    //         description: 'CUSTOM ALIAS ALREADY EXISTS'
-    //     };
-    //     res.status(400).send(erroExists);
-    //     return;
-    // };
-
-    // shortnerRepository.save(output)
-    //     .then(response => {
-    //         res.status(200).send(response);
-    //     })
-    //     .catch(err => {
-    //         res.status(400).send(err);
-    //     })
-    console.log('terminou');
+    let output = {
+        alias: toSave.alias,
+        url: `http://shortner.com/${toSave.alias}`,
+        statitics: {
+            timeTaken: `${new Date().getTime() - startedTime}ms`
+        }
+    };
+    res.status(200).send(output);
 };
 
 module.exports = {

@@ -8,7 +8,8 @@ const schema = new Schema({
         type: String,
         required: false,
         trim: true,
-        unique: true
+        unique: true,
+        index: true
     },
     originalURL: {
         type: String,
