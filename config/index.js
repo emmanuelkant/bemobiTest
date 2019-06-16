@@ -5,6 +5,7 @@ const app = express();
 
 // Utilitários
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Rotas
 const allRoutes = require('./routes');
@@ -20,6 +21,7 @@ mongoose.connect(uri, {useNewUrlParser: true})
 const Shortner = require('../src/ShortnerAndRetreaveUrl/model/shortner');
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/', allRoutes);
 
