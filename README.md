@@ -1,0 +1,15 @@
+# Repositório criado para implementar o teste da empresa Bemobi.
+
+### Nome: Emmanuel Kant Duarte
+
+--
+
+### Diagramas de Sequência criados a partir do caso de uso
+
+Caso de uso 1 'Shorten URL'
+
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRW5jdXJ0YW1lbnRvIGRlIFVSTCBlbSBOb2RlLmpzIChGbHV4byBQZXJmZWl0bykKCmNsaWVudC0-Y29udHJvbGxlcjogUmVxdWlzaXRhIG8gZQBGCwoAGwotPnJlcG9zaXRvcnkAJQxhIHF1YW50aWRhZGUgdG90YWwAgH8HcwoAJwoAXhB0b3JuYSBvACoGAEwZVmVyaWZpY2Egc2UgasOhIHRlbSB1bSBhbGlhcyBjb20gYXF1ZWxlIHZhbG9yAEsjcmVzdWx0YWRvIGRhIGNvbgAJBQCBQCNxdWUgc2FsdmUgbyBub3ZvIG9iamV0bwCBUw1tb2RlbDogU2FsdmEAGAgADwUAgigQAIFzCAA-BiBjcmlhZAA9DgCCFRYAIg4AgwwMAINLBgCCTQphAIN-BgCEEgZkYQoK&s=napkin
+
+Caso de uso 2 'Retrieve URL'
+
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgUmVxdWlzacOnw6NvIGRhIFVSTCBvcmlnaW5hbCBlbSBOb2RlLmpzIChGbHV4byBQZXJmZWl0bykKCmNsaWVudC0-Y29udHJvbGxlcjoARgh0YSAAPA4KABsKLT5yZXBvc2l0b3J5OiBQcm9jdXJhIG8gb2JqZXRvIG5vIERhdGEgU291cmNlCgAiCgBZEHRvcm4ALgoASBkAgVsFdGEgcXVlIHNhbHZlAGEKbW9kaWZpY2FkbwBaDW1vZGVsOiBTYWx2YQBWCAAPBQBJEAB0DgBZBQA8EACBFxwAKAkAghAMAIJPBjogUmVkaXJlY2lvbmEgcGFyAII_EQo&s=napkin

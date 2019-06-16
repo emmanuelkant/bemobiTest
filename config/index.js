@@ -17,7 +17,7 @@ const uri = `${DB_STR.BASE_PATH}${DB_STR.USER}:${DB_STR.PASSWORD}@${DB_STR.CLUST
 mongoose.connect(uri, {useNewUrlParser: true})
 
 // Carregando Models
-const Shortner = require('../src/ShortnerUrl/model/shortner');
+const Shortner = require('../src/ShortnerAndRetreaveUrl/model/shortner');
 
 app.use(bodyParser.json());
 

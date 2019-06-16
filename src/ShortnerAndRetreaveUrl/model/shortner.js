@@ -18,8 +18,11 @@ const schema = new Schema({
     },
     identifier: {
         type: Number,
-        required: false,
-        trim: true
+        required: false
+    },
+    calledTimes: {
+        type: Number,
+        required: false
     }
 });
 
