@@ -2,4 +2,7 @@
 
 const app = require('./config');
 
-app.listen(process.env.PORT || 8080);
+const port = process.env.PORT;
+
+app.listen(port || 8080);
+console.log(port);
